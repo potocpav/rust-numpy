@@ -3,7 +3,7 @@ use ndarray::*;
 use npyffi::{self, npy_intp, NPY_ORDER, PY_ARRAY_API};
 use num_traits::AsPrimitive;
 use pyo3::{ffi, prelude::*, types::PyObjectRef};
-use pyo3::{PyDowncastError, PyObjectWithToken, ToPyPointer};
+use pyo3::{PyDowncastError, PyObjectWithGIL, ToPyPointer};
 use std::iter::ExactSizeIterator;
 use std::marker::PhantomData;
 use std::mem;

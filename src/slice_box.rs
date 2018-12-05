@@ -66,7 +66,7 @@ impl<T> ToPyPointer for SliceBox<T> {
     }
 }
 
-impl<T> PyObjectAlloc<SliceBox<T>> for SliceBox<T> {
+impl<T> PyObjectAlloc for SliceBox<T> {
     /// Calls the rust destructor for the object.
     unsafe fn drop(py: Python, obj: *mut ffi::PyObject) {
         let data = (*(obj as *mut SliceBox<T>)).inner;
